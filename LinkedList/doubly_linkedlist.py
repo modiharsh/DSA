@@ -1,8 +1,11 @@
+from typing import Any
+
+
 class Node:
     def __init__(self, data):
         self.data = data
-        self.next = None
-        self.prev = None
+        self.next: Node | None = None
+        self.prev: Node | None = None
 
 def forward_traversal(head):
     curr = head
@@ -55,6 +58,8 @@ def insert_at_front(head, val):
 
 def insert_at_end(head, val):
     new_node = Node(val)
+    if not head:
+        return new_node
     curr = head
     while curr.next:
         curr = curr.next
@@ -142,7 +147,7 @@ def reverse_list(head):
     if not head:
         return
     
-    prev = None
+    prev: Any = None
     curr = head
     while curr:
         temp_node = curr.next
@@ -151,7 +156,8 @@ def reverse_list(head):
         curr.next = prev
         prev = curr
         curr = temp_node
-    prev.prev = None
+    if prev:
+        prev.prev = None
     return prev
 
 
@@ -199,6 +205,7 @@ if __name__ == "__main__":
     head = reverse_list(head)
     print(f"After reversing the list:", end=" ")
     print_list(head, debug=True)
+    print_list(head)
 
     head = delete_at_front(head)
     print(f"After deleting at front:", end=" ")
