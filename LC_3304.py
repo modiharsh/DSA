@@ -19,6 +19,11 @@ class Solution:
             prev = get_char(k - half, layer-1)
             return chr(((ord(prev) - ord('a') + 1) % 26) + ord('a'))
 
+        layer = 0
+        while (1<<layer) < k:
+            layer += 1
+        return get_char(k, layer)
+
 
 # Example 1:
 
