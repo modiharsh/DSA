@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/fruits-into-baskets-ii #Medium #Array #BinarySearch #Simulation #OrderedSet
+# https://leetcode.com/problems/fruits-into-baskets-ii #Easy #Array #BinarySearch #Simulation #OrderedSet
 
 class Solution:
     def numOfUnplacedFruits(self, fruits: List[int], baskets: List[int]) -> int:
